@@ -1,0 +1,24 @@
+version: 2
+
+sources:
+  - name: sap_adw
+    database: adventure-works-dw-414117
+    schema: sap_adw
+    tables:
+      - name: customer 
+        description: This table contains customer information.
+        columns:
+          - name: customerid
+            description: Unique ID for this table.
+            tests:
+              - unique
+              - not_null
+          - name: personid
+            description: Unique ID for the person table (FK).
+          - name: storeid
+            description: Unique ID for stores.
+          - name: territoryid
+            description: Unique ID for customer territory.
+          - name: rowguid
+          - name: modifieddate
+            description: Date and time the record was last updated.

@@ -1,0 +1,59 @@
+version: 2
+
+sources:
+  - name: sap_adw
+    database: adventure-works-dw-414117
+    schema: sap_adw
+    tables:
+      - name: salesorderheader 
+        description: This table contains general sales order information.
+        columns:
+          - name: salesorderid
+            description: Unique ID for this table.
+            tests:
+              - unique
+              - not_null
+          - name: revisionnumber
+            description: Incremental number to track changes to the sales order over time.
+          - name: orderdate
+            description: Date the sales order was created.
+          - name: duedate
+            description: Date the order is due to the customer.
+          - name: shipdate
+            description: Date the order was shipped to the customer.
+          - name: status
+            description: Order current status. 1 (Default) = In process; 2 = Approved; 3 = Backordered; 4 = Rejected; 5 = Shipped; 6 = Cancelled.
+          - name: onlineorderflag
+            description: 0 = Order placed by sales person. 1 = Order placed online by customer.
+          - name: purchaseordernumber
+            description: Customer purchase order number reference.
+          - name: accountnumber
+            description: Financial accounting number reference.
+          - name: customerid
+            description: Unique ID for customer.
+          - name: salespersonid
+            description: Unique ID for sales person.
+          - name: territoryid
+            description: Unique ID for territory.
+          - name: billtoaddressid
+            description: Customer billing address.
+          - name: shiptoaddressid
+            description: Customer shipping address.
+          - name: shipmethodid
+            description: Unique ID for shipping method.
+          - name: creditcardid
+            description: Credit card identification number.
+          - name: creditcardapprovalcode
+          - name: currencyrateid
+            description: Currency exchange rate used.
+          - name: subtotal
+            description: Sales subtotal. 
+          - name: taxamt
+            description: Tax amount.
+          - name: freight
+            description: Freight cost.
+          - name: totaldue
+            description: Total due from customer (subtotal + taxamt + freight).
+          - name: rowguid
+          - name: modifieddate
+            description: Date and time the record was last updated.

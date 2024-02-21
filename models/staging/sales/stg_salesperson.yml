@@ -1,0 +1,30 @@
+version: 2
+
+sources:
+  - name: sap_adw
+    database: adventure-works-dw-414117
+    schema: sap_adw
+    tables:
+      - name: salesperson
+        description: This table contains sales representative current information.
+        columns:
+          - name: businessentityid
+            description: Unique ID for this table.
+            tests:
+              - unique
+              - not_null
+          - name: territoryid
+            description: Unique ID for territory.
+          - name: salesquota
+            description: Projected yearly sales.
+          - name: bonus
+            description: Bonus due if quota is met.
+          - name: commissionpct
+            description: Commision percent received per sale.
+          - name: salesytd
+            description: Sales total year to date.
+          - name: saleslastyear
+            description: Sales total of previous year.
+          - name: rowguid
+          - name: modifieddate
+            description: Date and time the record was last updated.

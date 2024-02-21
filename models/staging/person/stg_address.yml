@@ -1,0 +1,25 @@
+version: 2
+
+sources:
+  - name: sap_adw
+    database: adventure-works-dw-414117
+    schema: sap_adw
+    tables:
+      - name: address 
+        description: This table contains address information for customers, employees, and vendors.
+        columns:
+          - name: addressid
+            description: Unique ID for this table.
+            tests:
+              - unique
+              - not_null
+          - name: addressline1
+          - name: addressline2
+          - name: city
+          - name: stateprovinceid
+            description: Unique ID for the state or province.
+          - name: postalcode
+          - name: spatiallocation
+          - name: rowguid
+          - name: modifieddate
+            description: Date and time the record was last updated.

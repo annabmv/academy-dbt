@@ -1,0 +1,19 @@
+version: 2
+
+sources:
+  - name: sap_adw
+    database: adventure-works-dw-414117
+    schema: sap_adw
+    tables:
+      - name: contacttype
+        description: This table contains the types of business entity contacts.
+        columns:
+          - name: contacttypeid
+            description: Unique ID for this table.
+            tests:
+              - unique
+              - not_null
+          - name: name
+            description: Contact type description.
+          - name: modifieddate
+            description: Date and time the record was last updated.

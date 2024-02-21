@@ -1,0 +1,18 @@
+version: 2
+
+sources:
+  - name: sap_adw
+    database: adventure-works-dw-414117
+    schema: sap_adw
+    tables:
+      - name: businessentity
+        description: This table connects vendors, customers, and employees with address and contact information.
+        columns:
+          - name: businessentityid
+            description: Unique ID for this table.
+            tests:
+              - unique
+              - not_null
+          - name: rowguid
+          - name: modifieddate
+            description: Date and time the record was last updated.

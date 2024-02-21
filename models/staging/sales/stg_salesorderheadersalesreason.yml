@@ -1,0 +1,19 @@
+version: 2
+
+sources:
+  - name: sap_adw
+    database: adventure-works-dw-414117
+    schema: sap_adw
+    tables:
+      - name: salesorderheadersalesreason
+        description: This is a cross-reference table mapping sales orders to sales reason codes.
+        columns:
+          - name: salesorderid
+            description: Unique ID for this table.
+            tests:
+              - unique
+              - not_null
+          - name: salesreasonid
+            description: Unique ID for sales reason.
+          - name: modifieddate
+            description: Date and time the record was last updated.

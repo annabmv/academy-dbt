@@ -1,0 +1,24 @@
+version: 2
+
+sources:
+  - name: sap_adw
+    database: adventure-works-dw-414117
+    schema: sap_adw
+    tables:
+      - name: store
+        description: Customers (resellers) of Adventure Works products.
+        columns:
+          - name: businessentityid
+            description: Unique ID for this table.
+            tests:
+              - unique
+              - not_null
+          - name: name
+            description: Name of the store.
+          - name: salespersonid
+            description: Unique ID for the sales person.
+          - name: demographics
+            description: Demographic informationg about the store.
+          - name: rowguid
+          - name: modifieddate
+            description: Date and time the record was last updated.

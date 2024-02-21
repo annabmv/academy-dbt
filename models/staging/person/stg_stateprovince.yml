@@ -1,0 +1,27 @@
+version: 2
+
+sources:
+  - name: sap_adw
+    database: adventure-works-dw-414117
+    schema: sap_adw
+    tables:
+      - name: stateprovince
+        description: This table contains state and province information for address.
+        columns:
+          - name: stateprovinceid
+            description: Unique ID for this table.
+            tests:
+              - unique
+              - not_null
+          - name: stateprovincecode
+            description: ISO standard state or province code.
+          - name: countryregioncode
+            description: ISO standard country or region code.
+          - name: isonlystateprovinceflag
+          - name: name
+            description: State or province name.
+          - name: territoryid
+            description: Unique ID for territory.
+          - name: rowguid
+          - name: modifieddate
+            description: Date and time the record was last updated.
