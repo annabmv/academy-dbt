@@ -1,0 +1,22 @@
+version: 2
+
+sources:
+  - name: sap_adw
+    database: adventure-works-dw-414117
+    schema: sap_adw
+    tables:
+      - name: productsubcategory
+        description: Product subcategories.
+        columns:
+          - name: productsubcategoryid
+            description: Unique ID for this table.
+            tests:
+              - unique
+              - not_null
+          - name: productcategoryid
+            description: Unique ID for product category.
+          - name: name
+            description: Subcategory description.
+          - name: rowguid
+          - name: modifieddate
+            description: Date and time the record was last updated.
