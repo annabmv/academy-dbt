@@ -2,21 +2,14 @@ with
 
 source as (
 
-    select * from {{ source('sap_adw', 'productsubcategory') }}
-
-),
-
-renamed as (
-
     select
-        productsubcategoryid,
-        productcategoryid,
-        name,
-        rowguid,
-        modifieddate
-
-    from source
+        productsubcategoryid as product_sub_category_id
+        , productcategoryid as product_category_id
+        , name
+        , modifieddate as modified_date
+        , rowguid
+    from {{ source('sap_adw', 'productsubcategory') }}
 
 )
 
-select * from renamed
+select * from source
