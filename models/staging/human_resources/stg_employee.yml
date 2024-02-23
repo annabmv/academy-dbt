@@ -1,0 +1,29 @@
+version: 2
+
+sources:
+  - name: sap_adw
+    database: adventure-works-dw-414117
+    schema: sap_adw
+    tables:
+      - name: employee
+        description: This table contains employee information such as salary, department, and title.
+        columns:
+          - name: businessentityid
+            description: Unique ID for this table.
+            tests:
+              - unique
+              - not_null
+          - name: nationalidnumber
+          - name: loginid
+            description: Network login ID.
+          - name: jobtitle
+          - name: birthdate
+          - name: gender
+          - name: hiredate
+          - name: salariedflag
+            description: Job classification. 0 = Hourly, not exempt from collective bargaining. 1 (default) = Salaried, exempt from collective bargaining.
+          - name: currentflag
+            description: 0 = Inactive, 1 = Active.
+          - name: rowguid
+          - name: modifieddate
+            description: Date and time the record was last updated.
