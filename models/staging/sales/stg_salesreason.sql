@@ -2,20 +2,13 @@ with
 
 source as (
 
-    select * from {{ source('sap_adw', 'salesreason') }}
-
-),
-
-renamed as (
-
     select
-        salesreasonid,
-        name,
-        reasontype,
-        modifieddate
-
-    from source
+        salesreasonid as sales_reason_id
+        , name
+        , reasontype as reason_type
+        , modifieddate as modified_date
+    from {{ source('sap_adw', 'salesreason') }}
 
 )
 
-select * from renamed
+select * from source
