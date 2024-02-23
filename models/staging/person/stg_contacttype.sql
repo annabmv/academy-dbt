@@ -2,19 +2,12 @@ with
 
 source as (
 
-    select * from {{ source('sap_adw', 'contacttype') }}
-
-),
-
-renamed as (
-
     select
-        contacttypeid,
-        name,
-        modifieddate
-
-    from source
+        contacttypeid as contact_type_id
+        , name
+        , modifieddate as modified_date
+    from {{ source('sap_adw', 'contacttype') }}
 
 )
 
-select * from renamed
+select * from source

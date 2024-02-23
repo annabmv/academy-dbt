@@ -2,20 +2,13 @@ with
 
 source as (
 
-    select * from {{ source('sap_adw', 'addresstype') }}
-
-),
-
-renamed as (
-
     select
-        addresstypeid,
-        name,
-        rowguid,
-        modifieddate
-
-    from source
+        addresstypeid as address_type_id
+        , name
+        , rowguid
+        , modifieddate as modified_date
+    from {{ source('sap_adw', 'addresstype') }}
 
 )
 
-select * from renamed
+select * from source

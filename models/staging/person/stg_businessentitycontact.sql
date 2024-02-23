@@ -2,21 +2,14 @@ with
 
 source as (
 
-    select * from {{ source('sap_adw', 'businessentitycontact') }}
-
-),
-
-renamed as (
-
     select
-        businessentityid,
-        personid,
-        contacttypeid,
-        rowguid,
-        modifieddate
-
-    from source
+        businessentityid as business_entity_id
+        , personid as person_id
+        , contacttypeid as contact_type_id
+        , modifieddate as modified_date
+        , rowguid
+    from {{ source('sap_adw', 'businessentitycontact') }}
 
 )
 
-select * from renamed
+select * from source

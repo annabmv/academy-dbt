@@ -2,24 +2,17 @@ with
 
 source as (
 
-    select * from {{ source('sap_adw', 'stateprovince') }}
-
-),
-
-renamed as (
-
     select
-        stateprovinceid,
-        stateprovincecode,
-        countryregioncode,
-        isonlystateprovinceflag,
-        name,
-        territoryid,
-        rowguid,
-        modifieddate
-
-    from source
+        stateprovinceid as state_province_id
+        , territoryid as territory_id
+        , stateprovincecode as state_province_code
+        , countryregioncode as country_region_code
+        , isonlystateprovinceflag as is_only_state_province_flag
+        , name
+        , modifieddate as modified_date
+        , rowguid
+    from {{ source('sap_adw', 'stateprovince') }}
 
 )
 
-select * from renamed
+select * from source

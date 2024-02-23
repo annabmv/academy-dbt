@@ -2,29 +2,22 @@ with
 
 source as (
 
-    select * from {{ source('sap_adw', 'person') }}
-
-),
-
-renamed as (
-
     select
-        businessentityid,
-        persontype,
-        namestyle,
-        title,
-        firstname,
-        middlename,
-        lastname,
-        suffix,
-        emailpromotion,
-        additionalcontactinfo,
-        demographics,
-        rowguid,
-        modifieddate
-
-    from source
+        businessentityid as business_entity_id
+        , persontype as person_type
+        , namestyle as name_style
+        , title
+        , firstname as first_name
+        , middlename as middle_name
+        , lastname as last_name
+        , suffix
+        , emailpromotion as email_promotion
+        , additionalcontactinfo as additional_contact_info
+        , demographics
+        , modifieddate as modified_date
+        , rowguid
+    from {{ source('sap_adw', 'person') }}
 
 )
 
-select * from renamed
+select * from source

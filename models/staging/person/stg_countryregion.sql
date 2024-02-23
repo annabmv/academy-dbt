@@ -2,19 +2,12 @@ with
 
 source as (
 
-    select * from {{ source('sap_adw', 'countryregion') }}
-
-),
-
-renamed as (
-
     select
-        countryregioncode,
-        name,
-        modifieddate
-
-    from source
+        countryregioncode as country_region_code
+        , name
+        , modifieddate as modified_date
+    from {{ source('sap_adw', 'countryregion') }}
 
 )
 
-select * from renamed
+select * from source

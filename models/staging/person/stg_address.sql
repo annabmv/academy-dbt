@@ -2,25 +2,18 @@ with
 
 source as (
 
-    select * from {{ source('sap_adw', 'address') }}
-
-),
-
-renamed as (
-
     select
-        addressid,
-        addressline1,
-        addressline2,
-        city,
-        stateprovinceid,
-        postalcode,
-        spatiallocation,
-        rowguid,
-        modifieddate
-
-    from source
+        addressid as address_id
+        , stateprovinceid as state_province_id
+        , addressline1 as address_line_1
+        , addressline2 as address_line_2
+        , city
+        , postalcode as postal_code
+        , spatiallocation as spatial_location
+        , modifieddate as modified_date
+        , rowguid
+    from {{ source('sap_adw', 'address') }}
 
 )
 
-select * from renamed
+select * from source
