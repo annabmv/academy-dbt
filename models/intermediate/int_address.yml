@@ -1,0 +1,19 @@
+version: 2
+
+models:
+    - name: int_address
+      description: This table contains address information such as city, state, and country.
+      columns:
+        - name: address_id
+          description: Unique ID for this table.
+          tests:
+            - unique
+            - not_null
+        - name: state_province_id
+        - name: territory_id
+        - name: address_line_1
+        - name: city
+        - name: state_province_code
+        - name: country_region_code
+        - name: state_name
+        - name: country_name
