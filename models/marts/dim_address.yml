@@ -1,9 +1,11 @@
 version: 2
 
 models:
-    - name: int_address
+    - name: dim_address
       description: This table contains address information such as city, state, and country.
       columns:
+        - name: sk_address
+          description: Surrogate key for uniquely identifying records in the address dimension table. 
         - name: address_id
           description: Primary key for address records.
           tests:
