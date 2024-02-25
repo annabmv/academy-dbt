@@ -1,0 +1,19 @@
+version: 2
+
+sources:
+  - name: sap_adw
+    database: adventure-works-dw-414117
+    schema: sap_adw
+    tables:
+      - name: personcreditcard
+        description: Cross-reference table mapping people to their credit card information
+        columns:
+          - name: businessentityid
+            description: Unique ID for this table.
+            tests:
+              - unique
+              - not_null
+          - name: creditcardid
+            description: Unique ID for credit card.
+          - name: modifieddate
+            description: Date and time the record was last updated.

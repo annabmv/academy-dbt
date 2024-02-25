@@ -1,0 +1,13 @@
+version: 2
+
+models:
+    - name: int_payment
+      description: This table contains customer credit card information.
+      columns:
+        - name: credit_card_id
+          description: Unique ID for this table.
+          tests:
+            - unique
+            - not_null
+        - name: business_entity_id
+        - name: card_type
