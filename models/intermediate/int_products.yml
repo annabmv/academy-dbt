@@ -1,0 +1,22 @@
+version: 2
+
+models:
+    - name: int_products
+      description: This table product information.
+      columns:
+        - name: product_id
+          description: Unique ID for this table.
+          tests:
+            - unique
+            - not_null
+        - name: product_name
+        - name: product_number
+        - name: sub_category_name
+        - name: category_name
+        - name: make_flag
+        - name: product_color
+        - name: product_line
+        - name: product_class
+        - name: product_style
+        - name: standard_cost
+        - name: list_price
