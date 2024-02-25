@@ -1,0 +1,18 @@
+version: 2
+
+models:
+    - name: int_customer
+      description: This table contains customer information.
+      columns:
+        - name: customer_id
+          description: Unique ID for this table.
+          tests:
+            - unique
+            - not_null
+        - name: business_entity_id
+        - name: person_type
+        - name: first_name
+        - name: middle_name
+        - name: last_name
+        - name: full_name
+        - name: email_promotion
