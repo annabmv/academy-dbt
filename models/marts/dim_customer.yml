@@ -1,0 +1,23 @@
+version: 2
+
+models:
+    - name: dim_customer
+      description: This table contains customer information.
+      columns:
+        - name: sk_customer
+          description: Surrogate key for uniquely identifying records in the employee dimension table.
+        - name: customer_id
+          description: Primary key for customer records.
+          tests:
+            - unique
+            - not_null
+        - name: business_entity_id
+          description: Unique ID for business entity.
+        - name: person_type
+          description: Primary type of person.
+        - name: first_name
+        - name: middle_name
+        - name: last_name
+        - name: full_name
+        - name: email_promotion
+          description: 0 (default) = Contact does not wish to receive e-mail promotions, 1 = Contact does wish to receive e-mail promotions from AdventureWorks, 2 = Contact does wish to receive e-mail promotions from AdventureWorks and selected partners.

@@ -1,7 +1,7 @@
 with
     dim_employee as (
         select 
-            {{ dbt_utils.generate_surrogate_key(['business_entity_id', 'territory_id']) }} as sk_employee
+            {{ dbt_utils.generate_surrogate_key(['business_entity_id', 'job_title']) }} as sk_employee
             , *
         from{{ ref('int_employee')}}
     )
