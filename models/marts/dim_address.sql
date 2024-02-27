@@ -1,7 +1,7 @@
 with
     dim_address as (
         select 
-            {{ dbt_utils.generate_surrogate_key(['address_id', 'address_line_1', 'city']) }} as sk_address
+            {{ dbt_utils.generate_surrogate_key(['address_id', 'state_province_id']) }} as sk_address
             , *
         from{{ ref('int_address')}}
     )

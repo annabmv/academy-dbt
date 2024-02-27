@@ -10,8 +10,11 @@ models:
             - unique
             - not_null
         - name: state_province_id
-        - name: territory_id
-        - name: address_line_1
+          tests:
+            - not_null
+        - name: territory_name
+          description: Territory description.
+        - name: address_line
         - name: city
         - name: state_province_code
         - name: country_region_code

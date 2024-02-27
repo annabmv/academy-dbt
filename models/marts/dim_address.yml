@@ -13,9 +13,9 @@ models:
             - not_null
         - name: state_province_id
           description: Unique ID for state or province.
-        - name: territory_id
-          description: Unique ID for territory.
-        - name: address_line_1
+        - name: territory_name
+          description: Territory description.
+        - name: address_line
           description: Address information.
         - name: city
         - name: state_province_code
