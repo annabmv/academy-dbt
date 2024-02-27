@@ -1,0 +1,17 @@
+version: 2
+
+models:
+    - name: dim_employee
+      description: This table contains employee (sales person) information.
+      columns:
+        - name: sk_employee
+          description: Surrogate key for uniquely identifying records in the employee dimension table.
+        - name: business_entity_id
+          description: Unique ID for this table.
+          tests:
+            - unique
+            - not_null
+        - name: territory_id
+          description: Unique ID for territory.
+        - name: job_title
+        - name: full_name
