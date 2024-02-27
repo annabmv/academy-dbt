@@ -41,7 +41,7 @@ with
             , person.email_promotion
             from customer
             left join person
-                on customer.customer_id = person.business_entity_id
+                on customer.person_id = person.business_entity_id
     )
 
 select *
