@@ -9,6 +9,6 @@ models:
           tests:
             - unique
             - not_null
-        - name: territory_id
+        - name: territory_name
         - name: job_title
         - name: full_name

@@ -27,10 +27,18 @@ with
         from{{ ref('stg_person')}}
     )
 
+    , territory as (
+        select
+            territory_id
+            , country_region_code
+            , name as territory_name
+        from{{ ref('stg_salesterritory')}}
+    )
+
     , int_employee as (
         select
             sales_person.business_entity_id
-            , sales_person.territory_id
+            , territory.territory_name
             , employee.job_title
             , person.full_name
             from sales_person
@@ -38,6 +46,8 @@ with
                 on sales_person.business_entity_id = employee.business_entity_id
             left join person
                 on employee.business_entity_id = person.business_entity_id
+            left join territory
+                on sales_person.territory_id = territory.territory_id
             where person.person_type = 'SP'
     )
 
