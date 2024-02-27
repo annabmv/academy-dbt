@@ -1,0 +1,26 @@
+version: 2
+
+models:
+    - name: dim_address
+      description: This table contains address information such as city, state, and country.
+      columns:
+        - name: sk_address
+          description: Surrogate key for uniquely identifying records in the address dimension table. 
+        - name: address_id
+          description: Primary key for address records.
+          tests:
+            - unique
+            - not_null
+        - name: state_province_id
+          description: Unique ID for state or province.
+        - name: territory_name
+          description: Territory description.
+        - name: address_line
+          description: Address information.
+        - name: city
+        - name: state_province_code
+          description: ISO standard state or province code.
+        - name: country_region_code
+          description: ISO standard code for countries and regions.
+        - name: state_name
+        - name: country_name
