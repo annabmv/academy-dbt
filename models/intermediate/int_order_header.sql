@@ -27,6 +27,13 @@ with
         from {{ref('dim_payment')}} 
     )
 
+    , sales_reason as (
+        select
+            sk_sales_reason
+            , sales_order_id
+        from {{ref('dim_sales_reason')}}
+    )
+
     , order_header as (
         select
             sales_order_id
@@ -66,6 +73,7 @@ with
             , sales_person.sk_employee
             , address.sk_address
             , credit_card.sk_payment
+            , sales_reason.sk_sales_reason
             , order_header.sales_order_id
             , order_header.order_date
             , order_header.due_date
@@ -86,6 +94,8 @@ with
             on order_header.bill_to_address_id = address.address_id
         left join credit_card
             on order_header.credit_card_id = credit_card.credit_card_id
+        left join sales_reason
+            on order_header.sales_order_id = sales_reason.sales_order_id
     )
 
 select *

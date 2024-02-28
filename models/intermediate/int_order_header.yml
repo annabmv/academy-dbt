@@ -16,6 +16,10 @@ models:
             - not_null 
         - name: sk_payment
           description: Surrogate key for uniquely identifying records in the payment dimension table.
+        - name: sk_sales_reason
+          description: Surrogate key for uniquely identifying records in the sales reason dimension table.
+          tests:
+            - unique
         - name: sales_order_id
           description: Primary key for sales order records.
           tests:
