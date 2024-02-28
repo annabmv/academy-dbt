@@ -6,6 +6,9 @@ models:
       columns:
         - name: sk_employee
           description: Surrogate key for uniquely identifying records in the employee dimension table.
+          tests:
+            - unique
+            - not_null
         - name: business_entity_id
           description: Unique ID for this table.
           tests:

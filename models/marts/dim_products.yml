@@ -6,6 +6,9 @@ models:
       columns:
         - name: sk_products
           description: Surrogate key for uniquely identifying records in the products dimension table.
+          tests:
+            - unique
+            - not_null
         - name: product_id
           description: Primary key for product records.
           tests:

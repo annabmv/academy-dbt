@@ -6,6 +6,9 @@ models:
       columns:
         - name: sk_customer
           description: Surrogate key for uniquely identifying records in the employee dimension table.
+          tests:
+            - unique
+            - not_null
         - name: customer_id
           description: Primary key for customer records.
           tests:

@@ -5,7 +5,10 @@ models:
       description: This table contains address information such as city, state, and country.
       columns:
         - name: sk_address
-          description: Surrogate key for uniquely identifying records in the address dimension table. 
+          description: Surrogate key for uniquely identifying records in the address dimension table.
+          tests:
+            - unique
+            - not_null 
         - name: address_id
           description: Primary key for address records.
           tests:
