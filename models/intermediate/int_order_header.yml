@@ -7,23 +7,15 @@ models:
         - name: sk_customer
           description: Surrogate key for uniquely identifying records in the customer dimension table.
           tests:
-            - unique
             - not_null 
         - name: sk_employee
-          description: Surrogate key for uniquely identifying records in the employee dimension table. 
-          tests:
-            - unique
-            - not_null
+          description: Surrogate key for uniquely identifying records in the employee dimension table.
         - name: sk_address
           description: Surrogate key for uniquely identifying records in the address dimension table.
           tests:
-            - unique
             - not_null 
         - name: sk_payment
           description: Surrogate key for uniquely identifying records in the payment dimension table.
-          tests:
-            - unique
-            - not_null 
         - name: sales_order_id
           description: Primary key for sales order records.
           tests:

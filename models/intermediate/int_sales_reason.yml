@@ -9,6 +9,5 @@ models:
           tests:
             - unique
             - not_null
-        - name: sales_reason_id
-        - name: reason_name
-        - name: reason_type
+        - name: reason_names
+        - name: reason_types

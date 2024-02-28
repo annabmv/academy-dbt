@@ -14,7 +14,7 @@ models:
         - name: sk_products
           description: Surrogate key for uniquely identifying records in the products dimension table.
           tests:
-            - not null
+            - not_null
         - name: order_qty
           description: Quantity ordered per product.
         - name: product_price

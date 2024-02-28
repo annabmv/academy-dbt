@@ -12,8 +12,7 @@ models:
         - name: sales_order_id
           description: Primary key for sales order records.
           tests:
+            - unique
             - not_null
-        - name: sales_reason_id
-          description: Unique ID for sales reason.
-        - name: reason_name
-        - name: reason_type
+        - name: reason_names
+        - name: reason_types
