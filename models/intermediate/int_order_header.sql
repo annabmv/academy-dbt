@@ -3,6 +3,7 @@ with
         select
             sk_customer
             , customer_id
+            , store_id
         from {{ref('dim_customer')}}
     )
 
@@ -75,6 +76,7 @@ with
             , credit_card.sk_payment
             , sales_reason.sk_sales_reason
             , order_header.sales_order_id
+            , customer.store_id
             , order_header.order_date
             , order_header.due_date
             , order_header.ship_date

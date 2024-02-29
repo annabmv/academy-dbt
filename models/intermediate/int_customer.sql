@@ -24,8 +24,9 @@ with
 
     , int_customer as (
         select
-            customer.customer_id
+            customer_id
             , person.business_entity_id
+            , store_id
             , case
                 when person.person_type = 'SC' then 'Store Contact'
                 when person.person_type = 'IN' then 'Individual Customer'

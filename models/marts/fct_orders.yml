@@ -3,6 +3,11 @@ version: 2
 models:
     - name: fct_orders
       description: This fact table provides sales order information at the product level.
+      tests:
+        - dbt_utils.unique_combination_of_columns:
+            combination_of_columns:
+              - sales_order_id
+              - item_id
       columns:
         - name: sk_customer
           description: Surrogate key for uniquely identifying records in the customer dimension table.
@@ -18,12 +23,9 @@ models:
           description: Surrogate key for uniquely identifying records in the payment dimension table.
         - name: sk_sales_reason
           description: Surrogate key for uniquely identifying records in the sales reason dimension table.
-          tests:
-            - unique
         - name: sales_order_id
           description: Unique ID for sales order records.
           tests:
-            - unique
             - not_null
         - name: item_id
           description: Primary key for this table.
