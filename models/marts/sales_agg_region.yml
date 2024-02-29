@@ -2,49 +2,20 @@ version: 2
 
 models:
     - name: sales_agg_region
-      description: This table aggregates sales data by region and employee
+      description: This table aggregates sales data by region and employee.
       columns:
-        - name: sk_customer
-          description: Surrogate key for uniquely identifying records in the customer dimension table.
-          tests:
-            - not_null 
         - name: sk_employee
           description: Surrogate key for uniquely identifying records in the employee dimension table.
-        - name: sk_address
-          description: Surrogate key for uniquely identifying records in the address dimension table.
           tests:
-            - not_null 
-        - name: sk_payment
-          description: Surrogate key for uniquely identifying records in the payment dimension table.
-        - name: sk_sales_reason
-          description: Surrogate key for uniquely identifying records in the sales reason dimension table.
-          tests:
-            - unique
-        - name: sales_order_id
-          description: Unique ID for sales order records.
-          tests:
-            - unique
             - not_null
-        - name: item_id
-          description: Primary key for this table.
-        - name: order_qty
-          description: Quantity ordered per product.
-        - name: product_price
-          description: Selling price of a single product.
-        - name: product_discount
-        - name: product_total
-        - name: order_date
-          description: Date the sales order was created.
-        - name: due_date
-          description: Date the order is due to the customer.
-        - name: ship_date
-          description: Date the order was shipped to the customer.
-        - name: order_status
-          description: Order current status.
-        - name: online_order_flag
-          description: False = Order placed by sales person. True = Order placed online by customer.
-        - name: order_subtotal
-        - name: order_tax
-        - name: order_freight
-        - name: order_total
-          description: Total due from customer (subtotal + taxamt + freight).
+            - unique
+        - name: region
+          description: Region description.
+        - name: full_name
+          description: Employee full name.
+        - name: total_orders_handled
+          description: Total number of orders.
+        - name: total_products_sold
+          description: Total products sold.
+        - name: total_sales
+          description: Total sales revenue.
