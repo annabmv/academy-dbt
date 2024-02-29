@@ -1,8 +1,8 @@
 version: 2
 
 models:
-    - name: fct_orders
-      description: This fact table provides sales order information at the product level.
+    - name: sales_agg_region
+      description: This table aggregates sales data by region and employee
       columns:
         - name: sk_customer
           description: Surrogate key for uniquely identifying records in the customer dimension table.
