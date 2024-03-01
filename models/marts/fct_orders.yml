@@ -23,12 +23,16 @@ models:
           description: Surrogate key for uniquely identifying records in the payment dimension table.
         - name: sk_sales_reason
           description: Surrogate key for uniquely identifying records in the sales reason dimension table.
+        - name: sk_products
+          description: Surrogate key for uniquely identifying records in the products dimension table.
         - name: sales_order_id
           description: Unique ID for sales order records.
           tests:
             - not_null
-        - name: item_id
+        - name: sales_order_detail_id
           description: Primary key for this table.
+        - name: store_id
+          description: Store identification.
         - name: order_qty
           description: Quantity ordered per product.
         - name: product_price
@@ -45,8 +49,9 @@ models:
           description: Order current status.
         - name: online_order_flag
           description: False = Order placed by sales person. True = Order placed online by customer.
-        - name: order_subtotal
-        - name: order_tax
-        - name: order_freight
-        - name: order_total
-          description: Total due from customer (subtotal + taxamt + freight).
+        - name: unique_tax
+          description: Fraction of tax value by product per order (totaltax/totalproducts).
+        - name: unique_freight
+          description: Fraction of freight value by product per order (totalfreight/totalproducts).
+        - name: unique_total
+          description: Fraction of order value by product per order (ordervalue/totalproducts).
