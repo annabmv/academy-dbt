@@ -7,7 +7,7 @@ models:
         - dbt_utils.unique_combination_of_columns:
             combination_of_columns:
               - sales_order_id
-              - item_id
+              - sales_order_detail_id
       columns:
         - name: sk_customer
           description: Surrogate key for uniquely identifying records in the customer dimension table.
@@ -31,8 +31,9 @@ models:
             - not_null
         - name: sales_order_detail_id
           description: Primary key for this table.
-        - name: store_id
-          description: Store identification.
+          tests:
+            - unique
+            - not_null
         - name: order_qty
           description: Quantity ordered per product.
         - name: product_price

@@ -7,14 +7,20 @@ sources:
     tables:
       - name: businessentitycontact
         description: This is a cross-reference table mapping stores, vendors, and employees to people.
+        tests:
+        - dbt_utils.unique_combination_of_columns:
+            combination_of_columns:
+              - businessentityid
+              - personid
         columns:
           - name: businessentityid
             description: Unique ID for this table.
             tests:
-              - unique
               - not_null
           - name: personid
             description: Unique ID for person.
+            tests:
+              - not_null
           - name: contactid
             description: Unique ID for contact type.
           - name: rowguid

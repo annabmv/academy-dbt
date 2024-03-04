@@ -52,7 +52,6 @@ with
             , sk_products
             , sales_order_id
             , sales_order_detail_id -- Retain line-item level granularity
-            , store_id
             , order_qty
             , product_price
             , product_discount
