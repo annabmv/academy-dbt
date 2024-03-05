@@ -1,0 +1,13 @@
+version: 2
+
+models:
+    - name: int_sales_reason
+      description: This table contains information of customer purchase reasons.
+      columns:
+        - name: sales_order_id
+          description: Unique ID for this table.
+          tests:
+            - unique
+            - not_null
+        - name: reason_names
+        - name: reason_types

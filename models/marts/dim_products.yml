@@ -1,0 +1,31 @@
+version: 2
+
+models:
+    - name: dim_products
+      description: This table product information.
+      columns:
+        - name: sk_products
+          description: Surrogate key for uniquely identifying records in the products dimension table.
+          tests:
+            - unique
+            - not_null
+        - name: product_id
+          description: Primary key for product records.
+          tests:
+            - unique
+            - not_null
+        - name: product_name
+        - name: product_number
+        - name: sub_category_name
+        - name: category_name
+        - name: make_flag
+          description: False = Product is purchased, True = Product is manufactured in-house.
+        - name: product_color
+        - name: product_line
+          description: R = Road, M = Mountain, T = Touring, S = Standard.
+        - name: product_class
+          description: H = High, M = Medium, L = Low.
+        - name: product_style
+          description: W = Womens, M = Mens, U = Universal.
+        - name: standard_cost
+        - name: list_price

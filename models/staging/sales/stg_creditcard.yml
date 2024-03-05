@@ -1,0 +1,25 @@
+version: 2
+
+sources:
+  - name: sap_adw
+    database: adventure-works-dw-414117
+    schema: sap_adw
+    tables:
+      - name: creditcard
+        description: Customer credit card information.
+        columns:
+          - name: creditcardid
+            description: Unique ID for this table.
+            tests:
+              - unique
+              - not_null
+          - name: cardtype
+            description: Credit card name.
+          - name: cardnumber
+            description: Credit card name number.
+          - name: expmonth
+            description: Credit card expiration month.
+          - name: expyear
+            description: Credit card expiration year.
+          - name: modifieddate
+            description: Date and time the record was last updated.

@@ -1,0 +1,28 @@
+version: 2
+
+sources:
+  - name: sap_adw
+    database: adventure-works-dw-414117
+    schema: sap_adw
+    tables:
+      - name: businessentityaddress 
+        description: This is a cross-reference table mapping customers, vendors, and employees to the address information.
+        tests:
+        - dbt_utils.unique_combination_of_columns:
+            combination_of_columns:
+              - businessentityid
+              - addressid
+        columns:
+          - name: businessentityid
+            description: Unique ID for this table.
+            tests:
+              - not_null
+          - name: addressid
+            description: Unique ID for the addrees information.
+            tests:
+              - not_null
+          - name: addresstypeid
+            description: Unique ID for the address type information.
+          - name: rowguid
+          - name: modifieddate
+            description: Date and time the record was last updated.

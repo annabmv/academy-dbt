@@ -1,0 +1,19 @@
+version: 2
+
+models:
+    - name: dim_payment
+      description: This table contains customer credit card information.
+      columns:
+        - name: sk_payment
+          description: Surrogate key for uniquely identifying records in the payment dimension table.
+          tests:
+            - unique
+            - not_null
+        - name: credit_card_id
+          description: Primary key for credit card records.
+          tests:
+            - unique
+            - not_null
+        - name: business_entity_id
+          description: Unique ID for business entity.
+        - name: card_type

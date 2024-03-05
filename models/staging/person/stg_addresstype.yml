@@ -1,0 +1,20 @@
+version: 2
+
+sources:
+  - name: sap_adw
+    database: adventure-works-dw-414117
+    schema: sap_adw
+    tables:
+      - name: addresstype
+        description: This table contains the type of address stored in the address table.
+        columns:
+          - name: addresstypeid
+            description: Unique ID for this table.
+            tests:
+              - unique
+              - not_null
+          - name: name
+            description: Address type description.
+          - name: rowguid
+          - name: modifieddate
+            description: Date and time the record was last updated.

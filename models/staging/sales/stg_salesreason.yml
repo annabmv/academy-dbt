@@ -1,0 +1,21 @@
+version: 2
+
+sources:
+  - name: sap_adw
+    database: adventure-works-dw-414117
+    schema: sap_adw
+    tables:
+      - name: salesreason
+        description: Table of customer purchase reasons.
+        columns:
+          - name: salesreasonid
+            description: Unique ID for this table.
+            tests:
+              - unique
+              - not_null
+          - name: name
+            description: Sales reason description.
+          - name: reasontype
+            description: Category of sales reason.
+          - name: modifieddate
+            description: Date and time the record was last updated.

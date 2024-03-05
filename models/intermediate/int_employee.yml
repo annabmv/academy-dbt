@@ -1,0 +1,14 @@
+version: 2
+
+models:
+    - name: int_employee
+      description: This table contains employee (sales person) information.
+      columns:
+        - name: business_entity_id
+          description: Unique ID for this table.
+          tests:
+            - unique
+            - not_null
+        - name: territory_name
+        - name: job_title
+        - name: full_name

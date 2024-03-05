@@ -1,0 +1,31 @@
+version: 2
+
+sources:
+  - name: sap_adw
+    database: adventure-works-dw-414117
+    schema: sap_adw
+    tables:
+      - name: person
+        description: This table contains information about for customers, employees, and vendors.
+        columns:
+          - name: businessentityid
+            description: Unique ID for this table.
+            tests:
+              - unique
+              - not_null
+          - name: persontype
+            description: Person type information. SC = Store contact, IN = Individual customer (retail), SP = Sales Person, EM = Employee (non-sales), VC = Vendor contact, GC = General contact. 
+          - name: namestyle
+            description: 0 = First and last name are stored in western style, 1 = Eastern style. Default = 0.
+          - name: title
+            description: Courtesy title.
+          - name: firstname
+          - name: middlename
+          - name: lastname
+          - name: suffix
+          - name: emailpromotion
+          - name: additionalcontactinfo
+          - name: demographics
+          - name: rowguid
+          - name: modifieddate
+            description: Date and time the record was last updated.

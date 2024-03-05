@@ -1,0 +1,37 @@
+version: 2
+
+models:
+    - name: int_order_header
+      description: This table contains general sales order information.
+      columns:
+        - name: sk_customer
+          description: Surrogate key for uniquely identifying records in the customer dimension table.
+          tests:
+            - not_null 
+        - name: sk_employee
+          description: Surrogate key for uniquely identifying records in the employee dimension table.
+        - name: sk_address
+          description: Surrogate key for uniquely identifying records in the address dimension table.
+          tests:
+            - not_null 
+        - name: sk_payment
+          description: Surrogate key for uniquely identifying records in the payment dimension table.
+        - name: sk_sales_reason
+          description: Surrogate key for uniquely identifying records in the sales reason dimension table.
+          tests:
+            - unique
+        - name: sales_order_id
+          description: Primary key for sales order records.
+          tests:
+            - unique
+            - not_null
+        - name: order_date
+        - name: due_date
+        - name: ship_date
+        - name: order_status
+        - name: online_order_flag
+        - name: ship_method_id
+        - name: order_subtotal
+        - name: order_tax
+        - name: order_freight
+        - name: order_total

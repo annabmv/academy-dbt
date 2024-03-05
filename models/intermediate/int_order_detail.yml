@@ -1,0 +1,25 @@
+version: 2
+
+models:
+    - name: int_order_detail
+      description: This table contains individual products associated with a specific sales order (SalesOrderHeader).
+      columns:
+        - name: sales_order_id
+          description: Unique ID for sales order.
+        - name: sales_order_detail_id
+          description: Unique ID for this table.
+          tests:
+            - unique
+            - not_null
+        - name: sk_products
+          description: Surrogate key for uniquely identifying records in the products dimension table.
+          tests:
+            - not_null
+        - name: order_qty
+          description: Quantity ordered per product.
+        - name: product_price
+          description: Selling price of a single product.
+        - name: product_discount
+          description: Discount amount.
+        - name: product_total
+          description: Total amount.

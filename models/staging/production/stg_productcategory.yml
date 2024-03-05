@@ -1,0 +1,20 @@
+version: 2
+
+sources:
+  - name: sap_adw
+    database: adventure-works-dw-414117
+    schema: sap_adw
+    tables:
+      - name: productcategory
+        description: Product categories.
+        columns:
+          - name: productcategoryid
+            description: Unique ID for this table.
+            tests:
+              - unique
+              - not_null
+          - name: name
+            description: Category description.
+          - name: rowguid
+          - name: modifieddate
+            description: Date and time the record was last updated.

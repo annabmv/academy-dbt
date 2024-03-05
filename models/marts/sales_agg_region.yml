@@ -1,0 +1,23 @@
+version: 2
+
+models:
+    - name: sales_agg_region
+      description: This table aggregates sales data by region and employee.
+      columns:
+        - name: region
+          description: Region description.
+          tests:
+            - not_null
+        - name: agg_year
+        - name: agg_month
+        - name: month_name
+        - name: full_name
+          description: Employee full name.
+          tests:
+            - not_null
+        - name: total_orders_handled
+          description: Total number of orders.
+        - name: total_products_sold
+          description: Total products sold.
+        - name: total_sales
+          description: Total sales revenue.

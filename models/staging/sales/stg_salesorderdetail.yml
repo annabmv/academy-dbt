@@ -1,0 +1,32 @@
+version: 2
+
+sources:
+  - name: sap_adw
+    database: adventure-works-dw-414117
+    schema: sap_adw
+    tables:
+      - name: salesorderdetail
+        description: This table contains individual products associated with a specific sales order (SalesOrderHeader).
+        columns:
+          - name: salesorderid
+            description: Unique ID for sales order.
+          - name: salesorderdetailid
+            description: Unique ID for this table.
+            tests:
+              - unique
+              - not_null
+          - name: carriertrackingnumber
+            description: Shipment tracking number supplied by the shipper.
+          - name: orderqty
+            description: Quantity ordered per product.
+          - name: productid
+            description: Unique ID for product identification.
+          - name: specialofferid
+            description: Unique ID for promotional code.
+          - name: unitprice
+            description: Selling price of a single product.
+          - name: unitpricediscount
+            description: Discount amount.
+          - name: rowguid
+          - name: modifieddate
+            description: Date and time the record was last updated.
