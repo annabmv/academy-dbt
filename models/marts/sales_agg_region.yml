@@ -4,7 +4,7 @@ models:
     - name: sales_agg_region
       description: This table aggregates sales data by region and employee.
       columns:
-        - name: region
+        - name: region_name
           description: Region description.
           tests:
             - not_null
